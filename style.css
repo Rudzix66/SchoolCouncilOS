@@ -56,6 +56,16 @@ button:hover {
     padding-left: 1.2rem;
 }
 
+@media only screen and (max-width: 600px) {
+    .status-btn {
+        width: 100%;
+        border-radius: 10rem;
+        font-size: 12em;
+        margin: 10rem 0;
+        transition: .25s ease-in-out background-color,.25s ease-in-out transform;
+    }
+}
+
 #clear-status {
     z-index: 999;
     position: fixed;
@@ -73,11 +83,11 @@ button:hover {
 }
 
 .status-btn:hover{
-    background-color: #414141;
+    background-color: #6dc95a;
     transform: scale(1.05);
 }
 
 .active, .status-btn:focus{
-    background-color: #6c6c6c;
+    background-color: #4aa62a;
     transform: scale(1.2);
 }
