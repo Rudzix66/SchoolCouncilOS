@@ -1,4 +1,13 @@
 ( function () {
+
+    function validateMember () {
+        if(!localStorage.getItem('member')) {
+            alert("Nie znalezniono członka!")
+            const memberName = prompt("Podaj imię i nazwisko")
+            localStorage.setItem('member', memberName)
+        }
+    }
+
     const statusBtn = document.querySelectorAll('.status-btn');
     statusBtn.forEach(btn => btn.classList.remove('active'))
 
