@@ -1,5 +1,4 @@
 ( function () {
-    alert("test")
     validateMember()
 
     const statusBtn = document.querySelectorAll('.status-btn');
