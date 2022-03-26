@@ -1,36 +1,41 @@
 ( function () {
 
-    function validateMember () {
-        if(!localStorage.getItem('member')) {
-            alert("Nie znalezniono członka!")
-            const memberName = prompt("Podaj imię i nazwisko")
-            localStorage.setItem('member', memberName)
-        }
-    }
+    // function validateMember () {
+    //     if(!localStorage.getItem('member')) {
+    //         alert("Nie znalezniono członka!")
+    //         const memberName = prompt("Podaj imię i nazwisko")
+    //         localStorage.setItem('member', memberName)
+    //     }
+    // }
 
-    const statusBtn = document.querySelectorAll('.status-btn');
-    statusBtn.forEach(btn => btn.classList.remove('active'))
+    // const statusBtn = document.querySelectorAll('.status-btn');
+    // statusBtn.forEach(btn => btn.classList.remove('active'))
 
-    const userStatus = localStorage.getItem('userStatus');
+    // const userStatus = localStorage.getItem('userStatus');
 
-    statusBtn.forEach(btn => btn.addEventListener('click', () => {
+    // statusBtn.forEach(btn => btn.addEventListener('click', () => {
 
-        if(!localStorage.getItem('userStatus')) {
-            localStorage.setItem('userStatus', btn.dataset.status)
+    //     if(!localStorage.getItem('userStatus')) {
+    //         localStorage.setItem('userStatus', btn.dataset.status)
 
-        } else if(localStorage.getItem('userStatus')) {
-            if(userStatus === btn.dataset.status) {
-                btn.classList.add('active')
-            }      
-        }
+    //     } else if(localStorage.getItem('userStatus')) {
+    //         if(userStatus === btn.dataset.status) {
+    //             btn.classList.add('active')
+    //         }      
+    //     }
 
-        document.querySelector('body').addEventListener('click', () => {
-            btn.classList.remove('active')
-            localStorage.setItem('userStatus', btn.dataset.status)
-        })
+    //     document.querySelector('body').addEventListener('click', () => {
+    //         btn.classList.remove('active')
+    //         localStorage.setItem('userStatus', btn.dataset.status)
+    //     })
 
-        btn.classList.toggle('active')
-    }))
+    //     btn.classList.toggle('active')
+    // }))
 
 
 } )();
+
+function rememberButton(button) {
+	const buttonId = button.id;
+	localStorage.setItem("buttonID", buttonId);
+}
