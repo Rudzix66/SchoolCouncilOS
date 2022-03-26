@@ -1,12 +1,12 @@
 ( function () {
     const statusBtn = document.querySelectorAll('.status-btn');
 
-    statusBtn.forEach(btn => btn.classList.remove('active'));
-
     restoreActiveBtn()
 
     statusBtn.forEach(btn => btn.addEventListener('click', () => {
 
+        statusBtn.forEach(btn => btn.classList.remove('active'));
+        
         btn.classList.add('active')
     
         if(btn.classList.contains('active')) {
