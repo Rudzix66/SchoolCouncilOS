@@ -1,41 +1,30 @@
 ( function () {
+    const statusBtn = document.querySelectorAll('.status-btn');
 
-    // function validateMember () {
-    //     if(!localStorage.getItem('member')) {
-    //         alert("Nie znalezniono członka!")
-    //         const memberName = prompt("Podaj imię i nazwisko")
-    //         localStorage.setItem('member', memberName)
-    //     }
-    // }
+    statusBtn.forEach(btn => btn.classList.remove('active'));
 
-    // const statusBtn = document.querySelectorAll('.status-btn');
-    // statusBtn.forEach(btn => btn.classList.remove('active'))
+    restoreActiveBtn()
 
-    // const userStatus = localStorage.getItem('userStatus');
+    statusBtn.forEach(btn => btn.addEventListener('click', () => {
 
-    // statusBtn.forEach(btn => btn.addEventListener('click', () => {
+        btn.classList.add('active')
+    
+        if(btn.classList.contains('active')) {
+            rememberButton(btn.id);
+        };
 
-    //     if(!localStorage.getItem('userStatus')) {
-    //         localStorage.setItem('userStatus', btn.dataset.status)
-
-    //     } else if(localStorage.getItem('userStatus')) {
-    //         if(userStatus === btn.dataset.status) {
-    //             btn.classList.add('active')
-    //         }      
-    //     }
-
-    //     document.querySelector('body').addEventListener('click', () => {
-    //         btn.classList.remove('active')
-    //         localStorage.setItem('userStatus', btn.dataset.status)
-    //     })
-
-    //     btn.classList.toggle('active')
-    // }))
-
+        document.querySelector('body').addEventListener('click', () => {
+            btn.classList.remove('active')
+        })
+    }))
 
 } )();
 
 function rememberButton(button) {
-	const buttonId = button.id;
-	localStorage.setItem("buttonID", buttonId);
+	localStorage.setItem("buttonID", button);
+}
+
+function restoreActiveBtn() {
+    let buttonID = localStorage.getItem("buttonID");
+    document.getElementById(buttonID).classList.add("active");
 }
