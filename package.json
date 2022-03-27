@@ -14,10 +14,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Rudzix66/SchoolCouncilOS/issues"
-  },
-  "homepage": "https://rudzix66.github.io/SchoolCouncilOS/",
   "dependencies": {
     "express": "^4.17.3",
     "googleapis": "^97.0.0"
