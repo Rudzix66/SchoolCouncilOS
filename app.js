@@ -10,8 +10,7 @@
         btn.classList.add('active')
     
         if(btn.classList.contains('active')) {
-            rememberButton(btn.id);
-            console.log(btn.id);
+            rememberButton(btn);
         };
 
         document.querySelector('body').addEventListener('click', () => {
@@ -22,12 +21,12 @@
 } )();
 
 function rememberButton(button) {
-	localStorage.setItem("buttonID", button);
+	localStorage.setItem("buttonID", button.id);
 }
 
 
 function restoreActiveBtn() {
     const buttonID = localStorage.getItem("buttonID");
-    const activeBtn = document.getElementById(buttonID.toString());
+    const activeBtn = document.getElementById(buttonID);
     activeBtn.classList.add("active");
 }
