@@ -1,3 +1,5 @@
+'use strict';
+
 ( function () {
     const statusBtn = document.querySelectorAll('.status-btn');
 
@@ -5,14 +7,18 @@
 
     statusBtn.forEach(btn => btn.addEventListener('click', () => {
 
+        // remove the active class from all buttons to avoid bugs
         statusBtn.forEach(btn => btn.classList.remove('active'));
         
+        // add the active class to the clicked button
         btn.classList.add('active')
     
+        // store the button id in local storage as buttonID item
         if(btn.classList.contains('active')) {
             rememberButton(btn);
         };
-
+        // to remove the active class from buttons when body clicked
+        // usuwam klasy active z buttonów kiedy kliknięto body
         document.querySelector('body').addEventListener('click', () => {
             btn.classList.remove('active')
         })
@@ -28,5 +34,7 @@ function rememberButton(button) {
 function restoreActiveBtn() {
     const buttonID = localStorage.getItem("buttonID");
     const activeBtn = document.getElementById(buttonID);
+    console.log(activeBtn.classList.contains("active"))
     activeBtn.classList.add("active");
+    console.log(activeBtn.classList.contains("active"));
 }
