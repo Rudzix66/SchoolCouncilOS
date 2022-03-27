@@ -24,6 +24,7 @@ function rememberButton(button) {
 	localStorage.setItem("buttonID", button);
 }
 
+
 function restoreActiveBtn() {
     let buttonID = localStorage.getItem("buttonID");
     const activeBtn = document.getElementById(buttonID.toString());
