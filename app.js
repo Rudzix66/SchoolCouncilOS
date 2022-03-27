@@ -11,6 +11,7 @@
     
         if(btn.classList.contains('active')) {
             rememberButton(btn.id);
+            console.log(btn.id);
         };
 
         document.querySelector('body').addEventListener('click', () => {
@@ -27,6 +28,6 @@ function rememberButton(button) {
 
 function restoreActiveBtn() {
     const buttonID = localStorage.getItem("buttonID");
-    const activeBtn = document.getElementById(buttonID);
+    const activeBtn = document.getElementById(buttonID.toString());
     activeBtn.classList.add("active");
 }
