@@ -18,7 +18,6 @@
         rememberButton(btn);
       }
       // to remove the active class from buttons when body clicked
-      // usuwam klasy active z buttonów kiedy kliknięto body
       document.querySelector("body").addEventListener("click", () => {
         btn.classList.remove("active");
       });
@@ -28,10 +27,12 @@
 
 function rememberButton(button) {
   localStorage.setItem("buttonID", button.id);
+  console.log(button.id);
 }
 
 function restoreActiveBtn() {
   const buttonID = localStorage.getItem("buttonID");
   const activeBtn = document.getElementById(buttonID);
   activeBtn.classList.add("active");
+  console.log('actibeBtn', activeBtn, 'buttonID', buttonID);
 }
