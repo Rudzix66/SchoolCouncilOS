@@ -38,9 +38,7 @@ function restoreActiveBtn() {
 }
 
 function localStoreageCheck () {
-  if (localStorage.getItem("buttonID") === null) {
-    console.log("No buttonID");
-  } else {
-    console.log("buttonID is " + localStorage.getItem("buttonID"));
+  if (!localStorage.getItem("buttonID")) {
+    localStorage.setItem("buttonID", "status-1");
   }
 }
