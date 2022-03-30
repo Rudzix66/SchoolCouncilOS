@@ -1,4 +1,3 @@
-"use strict";
 
 (function () {
   const statusBtn = document.querySelectorAll(".status-btn");
