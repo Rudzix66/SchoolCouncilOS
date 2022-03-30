@@ -33,6 +33,6 @@ function rememberButton(button) {
 function restoreActiveBtn() {
   const buttonID = localStorage.getItem("buttonID");
   const activeBtn = document.getElementById(buttonID);
-  activeBtn.classList.add("active");
   console.log(activeBtn.classList);
+  activeBtn.classList.add("active");
 }
