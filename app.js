@@ -1,5 +1,6 @@
 
 (function () {
+  localStoreageCheck();
   const statusBtn = document.querySelectorAll(".status-btn");
 
   restoreActiveBtn();
@@ -34,4 +35,12 @@ function restoreActiveBtn() {
   const activeBtn = document.getElementById(buttonID);
   console.log(activeBtn.classList);
   activeBtn.classList.add("active");
+}
+
+function localStoreageCheck () {
+  if (localStorage.getItem("buttonID") === null) {
+    console.log("No buttonID");
+  } else {
+    console.log("buttonID is " + localStorage.getItem("buttonID"));
+  }
 }
