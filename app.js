@@ -39,6 +39,8 @@ function restoreActiveBtn() {
 
 function localStoreageCheck () {
   if (!localStorage.getItem("buttonID")) {
-    localStorage.setItem("buttonID", "status-1");
+    localStorage.setItem("buttonID", "status-3");
+    document.querySelector('.status-btn.active').classList.remove('active');
+    document.querySelector("#status-3").classList.add("active");
   }
 }
