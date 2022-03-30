@@ -1,8 +1,7 @@
-
 (function () {
-  localStoreageCheck();
   const statusBtn = document.querySelectorAll(".status-btn");
 
+  localStoreageCheck();
   restoreActiveBtn();
 
   statusBtn.forEach((btn) =>
@@ -37,10 +36,11 @@ function restoreActiveBtn() {
   activeBtn.classList.add("active");
 }
 
-function localStoreageCheck () {
+function localStoreageCheck() {
   if (!localStorage.getItem("buttonID")) {
     localStorage.setItem("buttonID", "status-3");
-    document.querySelector('.status-btn.active').classList.remove('active');
+    document.querySelector(".status-btn.active").classList.remove("active");
     document.querySelector("#status-3").classList.add("active");
+    location.reload();
   }
 }
