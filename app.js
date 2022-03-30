@@ -34,5 +34,5 @@ function restoreActiveBtn() {
   const buttonID = localStorage.getItem("buttonID");
   const activeBtn = document.getElementById(buttonID);
   activeBtn.classList.add("active");
-  console.log('activeBtn', activeBtn, 'buttonID', buttonID);
+  console.log(activeBtn.classList);
 }
